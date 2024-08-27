@@ -20,8 +20,8 @@ logfile = '{label}.log'
 mol = Atoms(symbols={atom}, positions={init_geom})
 
 kwargs = {kwargs}
-Gaussian.command = '{qc_command} < PREFIX.com > PREFIX.log'
 calc = Gaussian(**kwargs)
+calc.command = '{qc_command} < {label}.com > {label}.log'
 mol.calc = calc
 
 # RELAXED

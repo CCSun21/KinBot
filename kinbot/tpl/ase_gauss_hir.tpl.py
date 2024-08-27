@@ -11,9 +11,9 @@ logfile = '{label}.log'
 
 mol = Atoms(symbols={atom}, positions={geom})
 
-Gaussian.command = '{qc_command} < PREFIX.com > PREFIX.log'
 kwargs = {kwargs}
 calc = Gaussian(**kwargs)
+calc.command = '{qc_command} < {label}.com > {label}.log'
 mol.calc = calc
 
 try:
